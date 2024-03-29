@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, session, render_template, request, redirect, url_for, send_from_directory
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw
@@ -10,7 +10,6 @@ import warnings
 from sklearn.cluster import KMeans
 import webcolors
 from werkzeug.utils import secure_filename
-from flask import session, redirect, url_for
 matplotlib.use('Agg')
 
 
@@ -440,5 +439,5 @@ def uploaded_file(filename):
 
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(host='0.0.0.0', port=5000)
 
